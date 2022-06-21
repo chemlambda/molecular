@@ -1,6 +1,6 @@
 # Molecular computers with interaction combinators like graph rewriting systems
 
-Marius Buliga [homepage 1](https://mbuliga.github.io/) [homepage 2](http://imar.ro/~mbuliga/index.html)  [arXiv](https://arxiv.org/a/buliga_m_1.html) [figshare](https://figshare.com/authors/Marius_Buliga/475484)
+Marius Buliga [homepage 1](https://mbuliga.github.io/), [homepage 2](http://imar.ro/~mbuliga/index.html),  [arXiv](https://arxiv.org/a/buliga_m_1.html),  [figshare](https://figshare.com/authors/Marius_Buliga/475484)
 
 
 ## Problem
@@ -23,9 +23,9 @@ In all such applications of graph rewriting, **we position at the level of meani
 However, in this project we have a different goal. **We are interested mainly in the structure to structure level**. 
 
 Here is a different 3 stages process, where we put the accent on the structure to structure level. We want to have a chemical molecule which can be absorbed by a living cell. We ant that, once inside the living cell, the molecule is processed and produces a nano-machine (by making parts which self assemble, or other means), all by itself and outside our control. For this kind of problem we 3 steps: 
-- **meaning to structure** create the initial molecule, from a high level, language specification. For example say that the input molecule will be a piece of rna, created in a lab. 
-- **structure to structure** in the cell, the initial molecule enters in random reactions with other molecules and leads to another structure. For example the molecule is chemically copied and then translated into proteins which self-assemble into the goal nano-machine.
-- **structure to meaning** the presence of these nano-machines in the cell produce an effect which we can observe. 
+- **meaning to structure:** create the initial molecule, from a high level, language specification. For example say that the input molecule will be a piece of rna, created in a lab. 
+- **structure to structure:** in the cell, the initial molecule enters in random reactions with other molecules and leads to another structure. For example the molecule is chemically copied and then translated into proteins which self-assemble into the goal nano-machine.
+- **structure to meaning:** the presence of these nano-machines in the cell produce an effect which we can observe. 
 
 The differences are striking: 
 - we want to produce a structure which, left alone, induces the creation of another structure, 
@@ -41,7 +41,9 @@ The differences are striking:
 
 Part of the [chemlambda project](https://chemlambda.github.io/index.html). 
 
- This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example.
+ This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
+ 
+ [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
 
 
 
