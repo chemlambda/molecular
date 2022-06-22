@@ -29,7 +29,8 @@ Here is a different 3 stages process, where we put the accent on the structure t
 
 The differences are striking: 
 - we want to produce a structure which, left alone, induces the creation of another structure, 
-- the level of meaning (where we design the initial structure in order to be able to obtain the final structure) is a tool which serves the structure to structure goal. 
+- the level of meaning (where we design the initial structure in order to be able to obtain the final structure) is a tool which serves the structure to structure goal,
+- there is no control of the algorithm of applications of graph rewrites, it is given by the nature.
 
  
 
@@ -44,6 +45,19 @@ Part of the [chemlambda project](https://chemlambda.github.io/index.html), which
  This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
  
  [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
+
+**What is new here**
+
+That we concentrate on the implementation in chemistry of a very few, selected, graph rewrite systems, which are related (but do not reduce to) lambda calculus. 
+
+The hypothesis is that life at molecular level is based on some version of these rewrites, as explained in [Alife properties of directed interaction combinators vs. chemlambda](https://mbuliga.github.io/quinegraphs/ic-vs-chem.html#icvschem) or [arXiv:2005.06060](https://arxiv.org/abs/2005.06060). 
+
+The connection with lambda calculus does not bind us to the constraints related to semantics. We use lambda calculus as inspiration for mechanisms of structure to structure production. 
+
+
+The connection with graph rewriting suggests a different "theory of everything", namely that the universe is not a huge dynamical graph. Instead, it is a loose collection of small graphs which interact via local graph rewriting. A correct TOE would be one where we can explain the behaviour of one such small graph which interacts with the rest of the universe only via random, local in space and time rewrites. 
+
+
 
 
 
