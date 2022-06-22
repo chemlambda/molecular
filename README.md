@@ -9,27 +9,27 @@ How to use real chemistry to build molecular computers which are based on graph 
 
 ## Why 
 
-In computer science and logic we use graph rewrite systems in relation to computation, lambda calculus, functional programming, etc. We now have a small list of interesting graph rewriting systems which allow universal computation. It is remarkable that some graph rewriting rules appear to be everywhere. 
+In computer science and logic we use graph rewriting systems in relation to computation, lambda calculus, functional programming, etc. We now have a small list of interesting graph rewriting systems which allow universal computation. It is remarkable that some graph rewriting rules appear to be everywhere. 
 
 Graph rewriting systems are a very promising direction for building decentralized computing systems, as well as for other programming, logical or mathematical subjects. 
 
 Typically there is a 3 stages process which uses graph rewriting. We want to solve a problem, therefore we write a program.
-- **meaning to structure:**  The program is then compiled to a graph.  This can also be seen as a language to structure problem. The language can be a term rewrite system, the program can be a term, the structure can be an abstract sysntax tree. Many other examples exist, which can be put into the form of transforming something which has a meaning (for a human), to something which can be processed by a machine (in this case a graph).
--  **structure to structure:** transform the initial graph into a final graph, by using the graph rewriting system and an algorithm for the choice and order of application of the rewrites. Usually this problem is complicated because we want to have a good translation not only of the meaning to structure, but also of the term reduction into graph reduction. For example, when we write a program we expect it to "do" something, and we would like that the execution of the program by the machine (ie the structure to structure part) to be a translation of what we imagine the program is doing. As an example, if our program is a lambda term, which is compiled into a graph, we would like the graph rewriting to be compatible with the term rewriting, ie the beta reduction term rewriting rule. 
+- **meaning to structure:**  The program is then compiled to a graph.  This can also be seen as a language to structure problem. The language can be a term rewrite system, the program can be a term, the structure can be an abstract syntax tree. Many other examples exist, which can be put into the form of transforming something which has a meaning (for a human), to something which can be processed by a machine (in this case a graph).
+-  **structure to structure:** transform the initial graph into a final graph, by using the graph rewriting system and an algorithm for the choice and order of application of the rewrites. Usually this problem is complicated because we want to have a good translation not only of the meaning to structure, but also of the term reduction into graph reduction. For example, when we write a program we expect it to "do" something, and we would like that the execution of the program by the machine (ie the structure to structure part) to be a translation of what we imagine the program is doing. As an example, if our program is a lambda term, which is compiled into a graph, we would like the graph rewriting to be compatible with the term rewriting, ie the beta reduction term rewriting rule. These semantic constraints which are put in the use of graph rewriting are incompatible with decentralized computing, see [Asemantic computing](https://telegra.ph/Asemantic-computing-03-02)   
 -   **structure to meaning:** transform the final graph into the language, in order to obtain the answer of the problem. For example, if the initial program was a lambda term, we compile it into a graph, then we reduce the graph, then we translate back the final graph into a lambda term. In other examples we just want to translate the final graph into something which has a meaning for us, into the solution of the problem.
 
 In all such applications of graph rewriting, **we position at the level of meaning**, we descend at the level of structure, where we use graph rewriting as a tool and then we translate back the result into a meaningful output. 
 
 However, in this project we have a different goal. **We are interested mainly in the structure to structure level**. 
 
-Here is a different 3 stages process, where we put the accent on the structure to structure level. We want to have a chemical molecule which can be absorbed by a living cell. We ant that, once inside the living cell, the molecule is processed and produces a nano-machine (by making parts which self assemble, or other means), all by itself and outside our control. For this kind of problem we 3 steps: 
+Here is a different 3 stages process, where we put the accent on the structure to structure level. As an example, we want to have a chemical molecule which can be absorbed by a living cell. We want that, once inside the living cell, the molecule is processed and produces a nano-machine (by making parts which self assemble, or by other means), all by itself and outside our control. For this kind of problem the 3 steps are: 
 - **meaning to structure:** create the initial molecule, from a high level, language specification. For example say that the input molecule will be a piece of rna, created in a lab. 
-- **structure to structure:** in the cell, the initial molecule enters in random reactions with other molecules and leads to another structure. For example the molecule is chemically copied and then translated into proteins which self-assemble into the goal nano-machine.
+- **structure to structure:** in the cell, the initial molecule enters in random reactions with other molecules and leads to another structure. For example the molecule is chemically copied and then translated into proteins which self-assemble into the goal nano-machine. We have no control over this step and there is no meaning (semantics) to be satisfied by this random process. 
 - **structure to meaning:** the presence of these nano-machines in the cell produce an effect which we can observe. 
 
 The differences are striking: 
 - we want to produce a structure which, left alone, induces the creation of another structure, 
-- the level of meaning (where we design the initial structure in order to be able to obtain the final structure) is a tool which serves the goal. 
+- the level of meaning (where we design the initial structure in order to be able to obtain the final structure) is a tool which serves the structure to structure goal. 
 
  
 
@@ -39,7 +39,7 @@ The differences are striking:
 
 ## Interesting graph rewriting systems to use, theoretical bibliography
 
-Part of the [chemlambda project](https://chemlambda.github.io/index.html). 
+Part of the [chemlambda project](https://chemlambda.github.io/index.html), which contains links to repositories and articles which are relevant.
 
  This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
  
