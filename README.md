@@ -64,4 +64,4 @@ But otherwise, this would be only a benchmark for our molecular computers propos
 
 
 
-(this version 21.06.2022)
+(this version 22.06.2022)
