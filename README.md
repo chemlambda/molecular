@@ -46,7 +46,7 @@ Part of the [chemlambda project](https://chemlambda.github.io/index.html), which
  
  [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
 
-**What is new here**
+## What is new here
 
 That we concentrate on the implementation in chemistry of a very few, selected, graph rewrite systems, which are related (but do not reduce to) lambda calculus. 
 
