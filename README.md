@@ -45,6 +45,10 @@ Part of the [chemlambda project](https://chemlambda.github.io/index.html), which
  This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
  
  [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
+ 
+ It is very interesting how Lafont proved the Turing universality of his [Interaction Combinators](https://github.com/chemlambda/molecular/blob/main/reading/Lafont-Interaction-Combinators.pdf).  First he introduces interaction systems, which are based on a general form of the patterns involved in the graph rewrites. Interaction systems are therefore at the level of structure to structure.  Then he shows that Turing machines can be seen as particular interaction systems. Finally, the bulk of the article is dedicated to the proof that Interaction Combinators are universal in the sense that any interaction system can be translated into Interaction Combinators.  Turing universality is therefore a corollary, because in particular the interaction systems which model Turing machines can be done with Interaction Combinators.
+ 
+ I would name this property "Lafont universality", or "graph rewriting universality". For confluent graph rewriting systems, like interaction systems, Lafont universality is equivalent with Turing universality, because conversely there is a clear algorithm for graph rewriting for interaction systems. But it is very interesting and inspiring that Lafont universality is a pure graph rewriting property. 
 
 ## What is new here
 
