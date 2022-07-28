@@ -5,7 +5,9 @@ Marius Buliga [homepage 1](https://mbuliga.github.io/), [homepage 2](http://imar
 
 ## Problem
 
-How to use real chemistry to build molecular computers which are based on graph rewriting systems like [chemlambda, chemSKI](https://chemlambda.github.io/index.html) or Interaction Combinators. in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
+How to use real chemistry to build molecular computers which are based on graph rewriting systems like [chemlambda, chemSKI](https://chemlambda.github.io/index.html) or Interaction Combinators. 
+
+This was first suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html), also  ([arXiv](https://arxiv.org/abs/1309.6914)) ([figshare](https://doi.org/10.6084/m9.figshare.7339103.v1)), where ackermann(2,2) is computed as an example. 
 
 ## Why 
 
