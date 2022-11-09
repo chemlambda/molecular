@@ -22,7 +22,11 @@ Typically there is a 3 stages process which uses graph rewriting. We want to sol
 
 In all such applications of graph rewriting, **we position at the level of meaning**, we descend at the level of structure, where we use graph rewriting as a tool and then we translate back the result into a meaningful output. 
 
-However, in this project we have a different goal. **We are interested mainly in the structure to structure level**. 
+ It is very interesting how Lafont proved the Turing universality of his [Interaction Combinators](./reading/Lafont-Interaction-Combinators.pdf).  First he introduces interaction systems, which are based on a general form of the patterns involved in the graph rewrites. Interaction systems are therefore at the level of structure to structure.  Then he shows that Turing machines can be seen as particular interaction systems. Finally, the bulk of the article is dedicated to the proof that Interaction Combinators are universal in the sense that any interaction system can be translated into Interaction Combinators.  Turing universality is therefore a corollary, because in particular the interaction systems which model Turing machines can be done with Interaction Combinators.
+ 
+ I would name this property "Lafont universality", or "graph rewriting universality". For confluent graph rewriting systems, like interaction systems, Lafont universality is equivalent with Turing universality, because conversely there is a clear algorithm for graph rewriting for interaction systems. But it is very interesting and inspiring that Lafont universality is a pure graph rewriting property. 
+
+Inspired by this, we have the following goal. **We are interested mainly in the structure to structure level**. 
 
 Here is a different 3 stages process, where we put the accent on the structure to structure level. As an example, we want to have a chemical molecule which can be absorbed by a living cell. We want that, once inside the living cell, the molecule is processed and produces a nano-machine (by making parts which self assemble, or by other means), all by itself and outside our control. For this kind of problem the 3 steps are: 
 - **meaning to structure:** create the initial molecule, from a high level, language specification. For example say that the input molecule will be a piece of rna, created in a lab. 
@@ -42,16 +46,16 @@ The differences are striking:
 
 ## Interesting graph rewriting systems to use, theoretical bibliography
 
-This is part of the [chemlambda project](https://chemlambda.github.io/index.html), which contains links to repositories and articles which are relevant. 
+This is part of the [chemlambda project](https://chemlambda.github.io/index.html), which contains links to repositories and articles which are relevant for chemlambda and chemSKI. 
 
 
  This was first suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
  
  [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
  
- It is very interesting how Lafont proved the Turing universality of his [Interaction Combinators](./reading/Lafont-Interaction-Combinators.pdf).  First he introduces interaction systems, which are based on a general form of the patterns involved in the graph rewrites. Interaction systems are therefore at the level of structure to structure.  Then he shows that Turing machines can be seen as particular interaction systems. Finally, the bulk of the article is dedicated to the proof that Interaction Combinators are universal in the sense that any interaction system can be translated into Interaction Combinators.  Turing universality is therefore a corollary, because in particular the interaction systems which model Turing machines can be done with Interaction Combinators.
+ A more recent presentation is [Molecular computers pitch talk](https://github.com/mbuliga/writings/blob/main/molecular-computers-pitch-talk.md). 
  
- I would name this property "Lafont universality", or "graph rewriting universality". For confluent graph rewriting systems, like interaction systems, Lafont universality is equivalent with Turing universality, because conversely there is a clear algorithm for graph rewriting for interaction systems. But it is very interesting and inspiring that Lafont universality is a pure graph rewriting property. 
+
 
 ## What is new here
 
@@ -70,7 +74,7 @@ The connection with graph rewriting suggests a different "theory of everything",
 
 ## Let's set the following goal
 
-Compute ackermann(2.2) or ackermann(2,3) with this system. Or why not ackermann(3,2)? or ackermann(4,4) to see what an [ackermann goo](https://chemlambda.github.io/collection.html#59) looks like, macroscopically.
+Compute ackermann(2.2) or ackermann(2,3) with real chemistry. Or why not ackermann(3,2)? or ackermann(4,4) to see what an [ackermann goo](https://chemlambda.github.io/collection.html#59) looks like, macroscopically.
 
 Once you can build one, you can build all. 
 
