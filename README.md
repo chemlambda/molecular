@@ -2,6 +2,7 @@
 
 Marius Buliga [homepage 1](https://mbuliga.github.io/), [homepage 2](http://imar.ro/~mbuliga/index.html),  [arXiv](https://arxiv.org/a/buliga_m_1.html),  [figshare](https://figshare.com/authors/Marius_Buliga/475484)
 
+[![DOI](https://zenodo.org/badge/505780183.svg)](https://zenodo.org/badge/latestdoi/505780183)
 
 ## Problem
 
