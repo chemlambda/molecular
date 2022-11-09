@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chemlambda movies productions presents:</title>
+    <script src="d3.min.js" charset="utf-8"></script>
+    <script src="jquery.min.js"></script>
+
+    <style>
+
+a:active, a:link, a:visited		{color: #ff0000;}
+
+.link line {
+  stroke: #ffff00;
+}
+
+.link line.separator {
+  stroke: #95A5A6;
+  stroke-width: 2px;
+}
+
+.node circle {
+  stroke: #000000;
+  stroke-width: 1.5px;
+}
+
+        .textClass {
+            stroke: #fff; 
+            font-weight: normal;
+            stroke-width: 1.;
+            font-size: 14px;
+        }
+
+.demo-info { 
+	padding: 14px 26px;
+	font-size: 14px;
+	line-height: 100%;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 10px;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+.demo-info:active {
+	padding-top: 15px;
+}
+.demo-info, .demo-info:hover, .demo-info:active {
+	outline: 0 none;
+	text-decoration: none;
+        color: #fff;
+}
+.demo-info-1 {
+	background-color: #222;
+	box-shadow: 0px 3px 0px 0px #000;
+
+</style>
+
+
+
+</head>
+
+
+
+<body style="background-color: #000000; color: #ffffff;">
+
+
+<p style="padding: 1px 26px;" ><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:2" src="cc-by-4-0.png"/></a> &nbsp; M. Buliga, 2019 <br> 
+</p>
+
+
+
+
+
+
+
+<br>
+
+<p>  <div id="gaga"></div> </p>
+
+<p  style="padding: 1px 26px;" id="timecounter"></p>
+
+
+
+
+<script src="univision.js" charset="utf-8"></script>
+<script src="universal.js" charset="utf-8"></script>
+
+
+
+<script>
+
+var speed = 250;
+
+//=============================================================================
+
+function modify(graph, comm, args) {
+switch(comm) {
+        
+        case "an": graph.addNode(args.i, args.a, args.si, args.co);
+        break;
+
+        case "rn": graph.removeNode(args.i);
+        break;
+
+        case "rl": graph.removeLink(args.s, args.t);
+        break;
+
+        case "al": graph.addLink(args.s, args.t, args.b);
+        break;
+}
+keepNodesOnTop(); 
+}
+
+function keepNodesOnTop() {
+  $(".nodeStrokeClass").each(function( index ) {
+                               var gnode = this.parentNode;
+                               gnode.parentNode.appendChild(gnode);
+                             }
+                        );
+}
+
+
+function addNodes() {
+  d3.select("svg")
+    .remove();
+drawGraph();
+}
+
+
+//=============================================================================
+
+
+var graph;
+    
+
+var timeCount = 0;
+var commCount = 0;
+
+
+
+function myGraph() { 
+
+  this.addNode = function (id, atom, size, colour) {
+                   nodes.push({"id": id, "atom": atom, "size": size, "colour": colour});
+                   update();
+                 };
+                                                
+  this.removeNode = function (id) {
+            var i = 0;
+            var n = findNode(id);
+            while (i < links.length) {
+                if ((links[i]['source'] == n) || (links[i]['target'] == n)) {
+                    links.splice(i, 1);
+                }
+                else i++;
+            }
+            nodes.splice(findNodeIndex(id), 1);
+            update();
+        };
+
+
+        this.removeLink = function (source, target) {
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].source.id == source && links[i].target.id == target) {
+                    links.splice(i, 1);
+                    break;
+                }
+            }
+            update();
+        };
+
+
+        this.removeallLinks = function () {
+            links.splice(0, links.length);
+            update();
+        };
+
+        this.removeAllNodes = function () {
+            nodes.splice(0, links.length);
+            update();
+        };
+
+        this.addLink = function (source, target, bond) {
+            links.push({"source": findNode(source), "target": findNode(target), "bond": bond});
+            update();
+        };
+
+//        this.colorLink = function (source, target, color) {
+//           for (var i = 0; i < links.length; i++) {
+//                if (links[i].source.id == source && links[i].target.id == target) {
+//                    links.[i]["stroke"] = color;
+//                }
+//            }
+//            update();
+//        };
+
+
+        var findNode = function (id) {
+            for (var i in nodes) {
+                if (nodes[i]["id"] === id) return nodes[i];
+            }
+            ;
+        };
+
+        var findNodeIndex = function (id) {
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].id == id) {
+                    return i;
+                }
+            }
+            ;
+        };
+
+
+
+        // set up the D3 visualisation in the specified element
+
+
+        var w = 500,
+        h = 500;
+
+//    var radius = d3.scale.sqrt()
+//    .range([0, 4]);
+
+
+
+        var vis = d3.select('#gaga')
+                .append("svg:svg")
+                .attr("width", w)
+                .attr("height", h)
+                .attr("id", "svg")
+                .attr("pointer-events", "all")
+                .attr("viewBox", "0 0 " + w + " " + h)
+                .attr("preserveAspectRatio", "xMinYMid")
+                .append('svg:g');
+
+
+        var force = d3.layout.force();
+
+        var nodes = force.nodes(),
+                links = force.links();
+                
+                
+        function update() {
+                    var link = vis.selectAll("line")
+                    .data(links, function (d) {
+                        return d.source.id + "-" + d.target.id;
+                    });
+
+                    link.enter().append("line")
+                    .attr("id", function (d) {
+                        return d.source.id + "-" + d.target.id;
+                    })
+                    .attr("stroke-width", function (d) {
+                        return (d.bond * 2 - 1)*2  + "px";
+                    })
+                    .attr("stroke", "#ffff00")
+                      .transition()
+                      .delay(12000)
+                      .style("stroke-opacity",0.9);
+ 
+                    link.filter(function(d) { return d.bond > 1; }).append("line")
+//                   .attr("class", "separator");
+                    .attr("class", "link");
+//            link.append("title")
+//                   .text(function (d) {
+//                        return d.value;
+//                   });
+                    link.exit().remove();
+                
+                
+             var node = vis.selectAll("g.node")
+                    .data(nodes, function (d) {
+                        return d.id;
+                    });
+
+            var nodeEnter = node.enter().append("g")
+                    .attr("class", "node")
+                    .call(force.drag);
+
+            nodeEnter.append("svg:circle")
+                    .attr("r", function(d) { return d.size*2;})
+                    .attr("id", function (d) {
+                        return "Node;" + d.id;
+                    })
+                    .attr("class", "nodeStrokeClass")
+                    .attr("fill", function(d) { return d.colour; })
+                    .attr("x", function(d) {return d.x; })
+                    .attr("y", function(d) {return d.y; })
+                    .attr("y", function(d) {return d.fixed; });
+
+//            nodeEnter.append("svg:text")
+//                    .attr("class", "textClass")
+//                    .attr("x", 14)
+//                    .attr("y", ".31em")
+//                    .text(function (d) {
+//                        return d.atom;
+//                    });
+
+             node.on("dblclick", function(d) { d.fixed = false; });
+
+             node.on("mousedown", function(d) { d.fixed = true; });
+
+
+
+             node.exit().remove();
+
+             force.on("tick", function () {
+
+                node.attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+                timeCount +=1;
+                document.getElementById("timecounter").innerHTML = timeCount;
+                link.attr("x1", function (d) {
+                    return d.source.x;
+                })
+                        .attr("y1", function (d) {
+                            return d.source.y;
+                        })
+                        .attr("x2", function (d) {
+                            return d.target.x;
+                        })
+                        .attr("y2", function (d) {
+                            return d.target.y;
+                        });
+            });
+
+            // Restart the force layout.
+
+     force
+//  .friction(.1)
+    .charge(-20)
+    .gravity(.08)
+    .linkStrength(6.8)
+                        .linkDistance( function(d) { return ((d.source.size + d.target.size + 3)/(40*d.bond)); } )
+    .size([w, h])
+    .start();
+        };
+
+
+           // Make it all go
+
+     update();
+
+// end of function myGraph()
+    }
+
+
+
+function drawGraph() {
+
+timeCount = 0;
+commCount = 0;
+
+// var shufff = someComputation();
+// var targetsShuffle = shufff.targets;
+// var sourcesShuffle = shufff.sources;
+
+var commandsHere = commands();
+var commandsHereL = commandsHere.length;
+
+graph = new myGraph("#svgdiv");
+
+var myVar = setInterval(play, speed);
+ 
+ function play() {
+               if (commCount < commandsHere.length) {
+                  modify(graph, commandsHere[commCount].c, commandsHere[commCount].a);
+                  commCount +=1;
+                } else {
+                  clearInterval(myVar);
+                }
+}
+
+
+
+
+
+
+// end of function drawGraph()  
+}
+
+  
+drawGraph();
+    // because of the way the network is created, nodes are created first, and links second,
+    // so the lines were on top of the nodes, this just reorders the DOM to put the svg:g on top
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
