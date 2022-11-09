@@ -5,7 +5,7 @@ Marius Buliga [homepage 1](https://mbuliga.github.io/), [homepage 2](http://imar
 
 ## Problem
 
-How to use real chemistry to build molecular computers which are based on graph rewriting systems like [chemlambda, chemSKI](https://chemlambda.github.io/index.html) or Interaction Combinators. 
+How to use real chemistry to build molecular computers which are based on graph rewriting systems like [chemlambda](https://chemlambda.github.io/index.html), [chemSKI](https://github.com/mbuliga/chemski) or [Lafont Interaction Combinators](./reading/Lafont-Interaction-Combinators.pdf). 
 
 This was first suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html), also  ([arXiv](https://arxiv.org/abs/1309.6914)) ([figshare](https://doi.org/10.6084/m9.figshare.7339103.v1)), where ackermann(2,2) is computed as an example. 
 
@@ -17,7 +17,7 @@ Graph rewriting systems are a very promising direction for building decentralize
 
 Typically there is a 3 stages process which uses graph rewriting. We want to solve a problem, therefore we write a program.
 - **meaning to structure:**  The program is then compiled to a graph.  This can also be seen as a language to structure problem. The language can be a term rewrite system, the program can be a term, the structure can be an abstract syntax tree. Many other examples exist, which can be put into the form of transforming something which has a meaning (for a human), to something which can be processed by a machine (in this case a graph).
--  **structure to structure:** transform the initial graph into a final graph, by using the graph rewriting system and an algorithm for the choice and order of application of the rewrites. Usually this problem is complicated because we want to have a good translation not only of the meaning to structure, but also of the term reduction into graph reduction. For example, when we write a program we expect it to "do" something, and we would like that the execution of the program by the machine (ie the structure to structure part) to be a translation of what we imagine the program is doing. As an example, if our program is a lambda term, which is compiled into a graph, we would like the graph rewriting to be compatible with the term rewriting, ie the beta reduction term rewriting rule. These semantic constraints which are put in the use of graph rewriting are incompatible with decentralized computing, see [Asemantic computing](https://telegra.ph/Asemantic-computing-03-02)   
+-  **structure to structure:** transform the initial graph into a final graph, by using the graph rewriting system and an algorithm for the choice and order of application of the rewrites. Usually this problem is complicated because we want to have a good translation not only of the meaning to structure, but also of the term reduction into graph reduction. For example, when we write a program we expect it to "do" something, and we would like that the execution of the program by the machine (ie the structure to structure part) to be a translation of what we imagine the program is doing. As an example, if our program is a lambda term, which is compiled into a graph, we would like the graph rewriting to be compatible with the term rewriting, ie the beta reduction term rewriting rule. These semantic constraints which are put in the use of graph rewriting are incompatible with decentralized computing, see [Asemantic computing](/reading/asemantic-computing.md)   
 -   **structure to meaning:** transform the final graph into the language, in order to obtain the answer of the problem. For example, if the initial program was a lambda term, we compile it into a graph, then we reduce the graph, then we translate back the final graph into a lambda term. In other examples we just want to translate the final graph into something which has a meaning for us, into the solution of the problem.
 
 In all such applications of graph rewriting, **we position at the level of meaning**, we descend at the level of structure, where we use graph rewriting as a tool and then we translate back the result into a meaningful output. 
@@ -37,18 +37,19 @@ The differences are striking:
  
 
 **Therefore we want:** 
-- to build a molecular computer in the sense of “[one molecule which transforms, by random chemical reactions mediated by a collection of enzymes, into a predictable other molecule, such that the output molecule can be conceived as the result of a computation encoded in the initial molecule.](https://zenodo.org/record/16018)”
+- to build a molecular computer in the sense of "one molecule which transforms, by random chemical reactions mediated by a collection of enzymes, into a predictable other molecule, such that the output molecule can be conceived as the result of a computation encoded in the initial molecule" [source](https://zenodo.org/record/16018).
 - to use what we know about graph rewriting in computer science to inspire us to do this structure to structure chemical computation. 
 
 ## Interesting graph rewriting systems to use, theoretical bibliography
 
-Part of the [chemlambda project](https://chemlambda.github.io/index.html), which contains links to repositories and articles which are relevant.
+This is part of the [chemlambda project](https://chemlambda.github.io/index.html), which contains links to repositories and articles which are relevant. 
 
- This was suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
+
+ This was first suggested in the article [Molecular computers](http://chorasimilarity.github.io/chemlambda-gui/dynamic/molecular.html) [arXiv](https://arxiv.org/abs/1309.6914) [figshare](https://doi.org/10.6084/m9.figshare.7339103.v1) , where ackermann(2,2) is computed as an example. 
  
  [Chemlambda for the people](https://chorasimilarity.github.io/chemlambda-gui/dynamic/cfp.html) is a presentation with examples, for a general audience.
  
- It is very interesting how Lafont proved the Turing universality of his [Interaction Combinators](https://github.com/chemlambda/molecular/blob/main/reading/Lafont-Interaction-Combinators.pdf).  First he introduces interaction systems, which are based on a general form of the patterns involved in the graph rewrites. Interaction systems are therefore at the level of structure to structure.  Then he shows that Turing machines can be seen as particular interaction systems. Finally, the bulk of the article is dedicated to the proof that Interaction Combinators are universal in the sense that any interaction system can be translated into Interaction Combinators.  Turing universality is therefore a corollary, because in particular the interaction systems which model Turing machines can be done with Interaction Combinators.
+ It is very interesting how Lafont proved the Turing universality of his [Interaction Combinators](./reading/Lafont-Interaction-Combinators.pdf).  First he introduces interaction systems, which are based on a general form of the patterns involved in the graph rewrites. Interaction systems are therefore at the level of structure to structure.  Then he shows that Turing machines can be seen as particular interaction systems. Finally, the bulk of the article is dedicated to the proof that Interaction Combinators are universal in the sense that any interaction system can be translated into Interaction Combinators.  Turing universality is therefore a corollary, because in particular the interaction systems which model Turing machines can be done with Interaction Combinators.
  
  I would name this property "Lafont universality", or "graph rewriting universality". For confluent graph rewriting systems, like interaction systems, Lafont universality is equivalent with Turing universality, because conversely there is a clear algorithm for graph rewriting for interaction systems. But it is very interesting and inspiring that Lafont universality is a pure graph rewriting property. 
 
@@ -84,4 +85,4 @@ But otherwise, this would be only a benchmark for our molecular computers propos
 
 
 
-(this version 28.07.2022)
+
